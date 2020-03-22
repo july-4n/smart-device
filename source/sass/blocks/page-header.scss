@@ -1,0 +1,155 @@
+.page-header__body {
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+
+  max-width: 1440px;
+  padding: 33px 14px;
+  margin: 0 auto;
+
+  background-color: $dark-blue;
+}
+
+.page-header__logo {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  width: 202px;
+
+  &::after {
+    content: "";
+
+    position: absolute;
+    top: 35%;
+    right: -154px;
+
+    width: 37px;
+    height: 1px;
+
+    background-color: $main-color;
+    box-shadow: 0 12px 0 0 $main-color;
+  }
+}
+
+.page-header__logo-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 9px;
+}
+
+.page-header__info {
+  @include reset-list();
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: auto;
+}
+
+.page-header__info a {
+  @include font(16px, 18px);
+  color: $main-color;
+  cursor: pointer;
+}
+
+.page-header__item:hover {
+  opacity: 0.7;
+}
+
+.page-header__item--email {
+  margin-right: 88px;
+}
+
+.page-header__item--email svg {
+  vertical-align: middle;
+  margin-right: 11px;
+}
+
+.page-header__item--phone svg {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.page-header__btn {
+  @include font(14px, 16px, 700);
+  display: inline-block;
+  align-self: center;
+
+  padding: 14px 32px;
+  margin-left: 51px;
+
+  font-family: $addition-font;
+  text-transform: uppercase;
+
+  color: $main-color;
+  background-color: transparent;
+  border: 1px solid $main-color;
+  border-radius: 5px;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: $accent-color;
+  }
+}
+
+@media (max-width: 1023px) {
+  .page-header__body {
+    padding: 20px 25px;
+  }
+
+  .page-header__logo::after {
+    right: -400px;
+  }
+
+  .page-header__info {
+    width: 83px;
+  }
+
+  .page-header__info span {
+    display: none;
+  }
+
+  .page-header__item--email {
+    margin-right: 0;
+  }
+
+  .page-header__item--email svg {
+    margin-right: 0;
+    width: 26px;
+    height: 19px;
+  }
+
+  .page-header__item--phone svg {
+    margin-right: 0;
+    width: 24px;
+    height: 24px;
+  }
+
+  .page-header__btn {
+    display: none;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .page-header__body {
+    padding: 14px 15px;
+  }
+
+  .page-header__logo {
+    width: 38px;
+
+    &::after {
+      right: -113px;
+    }
+  }
+
+  .page-header__logo-text {
+    display: none;
+  }
+
+  .page-header__info {
+    width: 73px;
+  }
+}

@@ -1,0 +1,11 @@
+@mixin font ($fz: 16px, $lh: 21.5px, $fw: 400) {
+  font-size: $fz;
+  line-height: $lh;
+  font-weight: $fw;
+}
+
+@mixin reset-list() {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}

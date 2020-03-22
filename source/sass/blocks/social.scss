@@ -1,0 +1,22 @@
+.social {
+  display: flex;
+  align-items: center;
+}
+
+.social__list {
+  @include reset-list();
+  display: flex;
+  justify-content: space-between;
+  width: 112px;
+}
+
+.social__list a:hover {
+  opacity: 0.5;
+}
+
+@media (max-width: $mobile-width) {
+  .social__list {
+    width: 112px;
+    margin: 0 auto;
+  }
+}
