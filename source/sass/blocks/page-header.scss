@@ -4,10 +4,8 @@
   align-self: center;
 
   max-width: 1440px;
-  padding: 33px 14px;
+  padding: 33px 14px 0;
   margin: 0 auto;
-
-  background-color: $dark-blue;
 }
 
 .page-header__logo {
@@ -16,13 +14,14 @@
   justify-content: space-between;
   align-self: center;
   width: 202px;
+  z-index: 10;
 
   &::after {
     content: "";
 
     position: absolute;
     top: 35%;
-    right: -154px;
+    right: -120px;
 
     width: 37px;
     height: 1px;
@@ -45,6 +44,7 @@
   justify-content: space-between;
   align-items: center;
   margin-left: auto;
+  z-index: 10;
 }
 
 .page-header__info a {
@@ -79,22 +79,24 @@
   padding: 14px 32px;
   margin-left: 51px;
 
+  z-index: 10;
+
   font-family: $addition-font;
   text-transform: uppercase;
 
   color: $main-color;
   background-color: transparent;
   border: 1px solid $main-color;
-  border-radius: 5px;
+  border-radius: $radius;
 
   cursor: pointer;
 
   &:hover {
-    background-color: $accent-color;
+    background-color: $decor-color;
   }
 }
 
-@media (max-width: 1023px) {
+@media (max-width: $tablet-width) {
   .page-header__body {
     padding: 20px 25px;
   }
