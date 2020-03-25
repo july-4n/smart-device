@@ -1,0 +1,221 @@
+.form {
+  background-color: $decor-color;
+}
+
+.form__body {
+  display: flex;
+  max-width: 1200px;
+  padding: 0 14px;
+  margin: 0 auto;
+}
+
+.form__info {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: 570px;
+  margin-left: auto;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    top: -59px;
+    left: -802px;
+
+    width: 1890px;
+    height: 765px;
+
+    background-image: url("../img/form-triangle.svg");
+    background-repeat: no-repeat;
+  }
+
+  &::after {
+    content: "";
+
+    position: absolute;
+    top: 160px;
+    left: -627px;
+
+    width: 511px;
+    height: 288px;
+
+    background-image: url("../img/paper-airplane@1x.png");
+    background-repeat: no-repeat;
+  }
+}
+
+.form__info h3 {
+  @include reset-list();
+  @include font(36px, 51px);
+  padding-top: 90px;
+  font-family: $addition-font;
+  color: $main-color;
+}
+
+.form__info span {
+  display: inline-block;
+  padding: 10px 0 49px;
+  color: $main-color;
+}
+
+.form__info form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 100%;
+  z-index: 10;
+}
+
+.form__item {
+  @include reset-list();
+}
+
+.form__item input {
+  width: 270px;
+  height: 50px;
+}
+
+.form__item input,
+.form__textarea textarea {
+  padding: 14px 16px;
+  margin-bottom: 40px;
+  border: 0;
+  color: $main-color;
+  background-color: rgba($main-color, 0.1);
+}
+
+.form__item input::placeholder,
+.form__textarea textarea::placeholder {
+  color: $main-color;
+}
+
+.form__textarea textarea {
+  width: 570px;
+  min-height: 154px;
+  resize: none;
+  border: none;
+}
+
+.form__submit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 119px;
+  z-index: 10;
+}
+
+.form__btn {
+  @include font(14px, 16px, 700);
+  min-width: 270px;
+  display: inline-block;
+  padding: 13.5px 70px;
+
+  border: 1px solid $main-color;
+  border-radius: $radius;
+
+  background-color: transparent;
+  color: $main-color;
+
+  font-family: $addition-font;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.form__checkbox {
+  @include reset-list();
+  @include font(14px, 16px);
+  position: relative;
+  display: inline-block;
+  margin-left: 70px;
+  color: $main-color;
+  opacity: 0.8;
+
+  &::before {
+    content: "";
+
+  position: absolute;
+  top: 0;
+  left: -30px;
+
+  width: 16px;
+  height: 16px;
+
+  border: 1px solid $main-color;
+  background-image: url(../img/checkbox.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  }
+}
+
+.form__checkbox input {
+  display: none;
+}
+
+@media (max-width: $tablet-width) {
+  .form__body {
+    padding: 0 25px;
+  }
+
+  .form__info {
+    max-width: 590px;
+    margin: 0 auto;
+
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+
+  .form__info h3 {
+    @include font(32px, 45px);
+    padding-top: 83px;
+  }
+
+  .form__item input {
+    width: 290px;
+    height: 51px;
+  }
+
+  .form__textarea textarea {
+    width: 590px;
+    min-height: 160px;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .form__body {
+    padding: 0 15px;
+  }
+
+  .form__info {
+    max-width: 290px;
+  }
+
+  .form__info h3 {
+    @include font(28px, 39px);
+    padding-top: 33px;
+  }
+
+  .form__textarea textarea {
+    width: 290px;
+    min-height: 104px;
+  }
+
+  .form__submit {
+    flex-direction: column;
+  }
+
+  .form__btn {
+    margin-bottom: 30px;
+  }
+
+  .form__checkbox {
+    @include font(14px, 16px);
+  }
+}

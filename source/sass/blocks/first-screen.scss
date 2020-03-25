@@ -1,59 +1,54 @@
 .first-screen__body {
   display: flex;
-  min-height: 100vh;
-  background-color: $background-top;
-  margin-top: -123px;
-}
-
-.first-screen__bg {
-  max-width: 1920px;
-  // min-height: 100vh;
-  width: 100%;
-  object-fit: cover;
-  position: relative;
-  object-fit: cover;
-  object-position: center;
+  max-width: 1660px;
   margin: 0 auto;
-
 }
 
 .first-screen__info {
-  position: absolute;
-  max-width: 1440px;
-  left: 0;
-  right: 0;
   display: flex;
   justify-content: space-between;
-  margin: 0 auto;
-  padding-top: 207px;
-  align-items: center;
-  text-align: center;
-
+  padding-top: 200px;
 }
 
 .first-screen__img {
-  position: absolute;
-  top: 171px;
-  right: -92px;
+  position: relative;
+  display: flex;
   width: 705px;
   height: 515px;
+  margin-left: auto;
+
+  &::after {
+    content: "";
+
+    position: absolute;
+    top: -200px;
+    left: -130px;
+
+    width: 777px;
+    height: 704px;
+
+    background-image: url("../img/first-screen/triangle.svg");
+    background-repeat: no-repeat;
+  }
 }
 
 .first-screen__text {
+  position: relative;
   display: flex;
   flex-direction: column;
-  color: $main-color;
   align-items: flex-start;
-
+  padding-top: 15px;
+  padding-left: 137px;
+  margin-right: 98px;
+  color: $main-color;
 }
 
 .first-screen__text h1 {
   @include reset-list();
   @include font(80px, 94px, 700);
-  margin-bottom: 40px;
-
-  // letter-spacing: 0.07em;
+  margin-bottom: 29px;
   font-family: $addition-font;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
 }
 
@@ -61,17 +56,18 @@
   @include reset-list();
   @include font(22px, 34px);
   position: relative;
-  max-width: 683px;
-  padding-left: 94px;
-  margin-bottom: 40px;
+  max-width: 730px;
+  padding-left: 96px;
+  margin-bottom: 42px;
   text-transform: lowercase;
   text-align: left;
+
 
   &::before {
     content: "";
 
     position: absolute;
-    top: 15px;
+    top: 16px;
     left: 0;
 
     width: 66px;
@@ -83,12 +79,10 @@
 
 .first-screen__btn {
   @include font(16px, 19px, 700);
-
   display: flex;
-  // align-self: left;
   height: 55px;
-  padding: 17px 35px 14px 35px;
-  margin-left: 94px;
+  padding: 17px 45px 14px 45px;
+  margin-left: 95px;
   border: transparent;
   border-radius: $radius;
 
@@ -108,11 +102,50 @@
   display: none;
 }
 
+.first-screen__scroll {
+  @include font(14px, 16px);
+  position: absolute;
+  top: 450px;
+  left: 110px;
+
+  opacity: 0.5;
+  transform: rotate(-90deg);
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  color: $main-color;
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
+}
+
 @media (max-width: $tablet-width) {
+  .first-screen__info {
+    padding-top: 15px;
+  }
+
   .first-screen__img {
-    right: -220px;
     width: 465px;
     height: 340px;
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: 777px;
+      height: 704px;
+    }
+  }
+
+  .first-screen__text {
+    padding-top: 114px;
+    padding-left: 90px;
   }
 
   .first-screen__text h1 {
@@ -122,7 +155,6 @@
 
   .first-screen__text p {
     @include font(18px, 28px);
-    max-width: 360px;
     padding-left: 48px;
     margin-bottom: 62px;
 
@@ -130,25 +162,55 @@
       width: 33px;
     }
   }
+
+  .first-screen__btn {
+    padding: 21px 32px;
+    margin-left: 49px;
+  }
+
+  .first-screen__scroll {
+    display: none;
+  }
 }
 
 @media (max-width: $mobile-width) {
+  .first-screen__info {
+    flex-direction: column;
+    padding-top: 30px;
+  }
+
   .first-screen__img {
-    left: auto;
-    right: auto;
     width: 301px;
     height: 220px;
+    order: 1;
+
+    &::after {
+      top: -190px;
+      left: -100px;
+    }
+  }
+
+  .first-screen__text {
+    order: 2;
+    padding-top: 0;
+    padding-left: 15px;
   }
 
   .first-screen__text h1 {
-    @include font(18px, 28px, 700);
-    margin-bottom: 30px;
+    @include font(40px, 47px, 700);
+
   }
 
   .first-screen__text p {
-    @include font(18px, 28px);
-    max-width: 360px;
+    @include font(16px, 25px);
+    width: 290px;
     margin-bottom: 42px;
+  }
+
+  .first-screen__btn {
+    padding: 17px 31px;
+    margin-left: 0;
+
   }
 
   .first-screen__btn--desk {
@@ -157,5 +219,6 @@
 
   .first-screen__btn--mobile {
     display: block;
+    min-width: 287px;
   }
 }

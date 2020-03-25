@@ -1,0 +1,155 @@
+
+.modal {
+  // position: fixed;
+  // top: 50%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
+  // margin-top: -30px;
+  z-index: 100;
+  width: 490px;
+  min-height: 605px;
+  background-color: $decor-color;
+}
+
+.modal__info {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 39px;
+}
+
+.modal__info b {
+  @include font(28px, 39px);
+  padding-top: 33px;
+  font-family: $addition-font;
+  color: $main-color;
+}
+
+.modal__info span {
+  display: inline-block;
+  padding: 14px 0 30px;
+  color: $main-color;
+}
+
+.modal__close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  width: 20px;
+  height: 20px;
+
+  background: url("../img/close.svg") top right no-repeat transparent;
+  border: 0;
+  cursor: pointer;
+  font-size: 0;
+}
+
+.modal__info form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__item {
+  @include reset-list();
+}
+
+.modal__item input {
+  width: 100%;
+  height: 51px;
+}
+
+.modal__item input,
+.modal__textarea textarea {
+  padding: 14px 24px;
+  margin-bottom: 30px;
+  border: 0;
+  color: $main-color;
+  background-color: rgba($main-color, 0.1);
+}
+
+.modal__item input::placeholder,
+.modal__textarea textarea::placeholder {
+  color: $main-color;
+}
+
+.modal__textarea textarea {
+  width: 100%;
+  min-height: 104px;
+  resize: none;
+  border: none;
+}
+
+.modal__submit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 36px;
+}
+
+.modal__btn {
+  @include font(14px, 16px, 700);
+  width: 100%;
+  display: inline-block;
+  padding: 13.5px 0;
+  margin-bottom: 34px;
+
+  border: 1px solid $main-color;
+  border-radius: $radius;
+
+  background-color: transparent;
+  color: $main-color;
+
+  font-family: $addition-font;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.modal__checkbox {
+  @include reset-list();
+  @include font(14px, 16px);
+  position: relative;
+  display: inline-block;
+  margin-left: 87px;
+  color: $main-color;
+  opacity: 0.8;
+
+  &::before {
+    content: "";
+
+  position: absolute;
+  top: 0;
+  left: -87px;
+
+  width: 16px;
+  height: 16px;
+
+  border: 1px solid $main-color;
+  background-image: url(../img/checkbox.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  }
+}
+
+.modal__checkbox input {
+  display: none;
+}
+
+
+@media (max-width: $tablet-width) {
+  .modal {
+    display: none;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .modal {
+    display: none;
+  }
+}

@@ -1,5 +1,13 @@
 .info {
   background: url("../img/bg-triangle.svg");
   background-position: top center;
+  background-size: auto;
   background-repeat: no-repeat;
+}
+
+@media (max-width: $tablet-width) {
+  .info {
+    background: url("../img/tablet-triangle.svg");
+    background-position: center center;
+  }
 }
