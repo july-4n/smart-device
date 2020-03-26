@@ -1,6 +1,6 @@
 .benefits__body {
   max-width: 1200px;
-  padding: 109px 14px 0 14px;
+  padding: 147px 14px 0 14px;
   margin: 0 auto;
 }
 
@@ -8,7 +8,6 @@
   @include reset-list();
   display: flex;
   flex-wrap: wrap;
-
   justify-content: space-between;
 }
 
@@ -17,13 +16,14 @@
   min-height: 299px;
   padding: 40px 36px 49px 44px;
   margin-bottom: 30px;
+  background: #fff;
   border: 1px solid $border;
   border-left: 1px solid $decor-color;
   cursor: pointer;
 
   &:hover {
     background-color: $decor-color;
-    // color: $main-color;
+    color: $main-color;
   }
 }
 
@@ -33,18 +33,24 @@
   margin: 15px 0;
   font-family: $addition-font;
   color: $decor-color;
-  z-index: 5;
-
-  &:hover {
-    color: $main-color;
-  }
 }
 
-.benefits__item--stopwatch svg {
-  &:hover {
-    fill: $main-color;
-  }
+.benefits__item:hover h3 {
+  color: $main-color;
 }
+
+.benefits__item p {
+  @include reset-list();
+}
+
+.benefits__item svg {
+  fill: $decor-color;
+}
+
+.benefits__item:hover svg {
+  fill: $main-color;
+}
+
 .benefits__item p {
   @include reset-list();
 
@@ -64,8 +70,7 @@
 
   .benefits__item {
     min-height: 232px;
-    padding: 25px 0 0 25px;
-    padding-bottom: 30px;
+    padding: 25px 22px 0 25px;
   }
 
   .benefits__item--stopwatch svg {
@@ -87,19 +92,17 @@
     width: 32.18px;
     height: 32.18px;
   }
+  .benefits__item h3 {
+    margin: 0 0 9px;
+  }
+
+  .benefits__item--detective h3 {
+    padding: 6px 0;
+  }
 
   .benefits__item--stopwatch,
   .benefits__item--hired {
     min-height: 306px;
-  }
-
-  .benefits__item--detective
-  .benefits__item--tag {
-    min-height: 232px;
-  }
-
-  .benefits__item h3 {
-    margin: 10px 0 13px;
   }
 }
 

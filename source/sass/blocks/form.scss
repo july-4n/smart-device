@@ -14,6 +14,7 @@
   display: flex;
   flex-direction: column;
   max-width: 570px;
+  width: 100%;
   margin-left: auto;
 
   &::before {
@@ -40,8 +41,12 @@
     width: 511px;
     height: 288px;
 
-    background-image: url("../img/paper-airplane@1x.png");
+    background-image: url("../img/paper-airplane@1x.webp"), url("../img/paper-airplane@1x.png");
     background-repeat: no-repeat;
+  }
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background: url("../img/paper-airplane@1x.webp"), url("../img/paper-airplane@2x.png");
   }
 }
 
@@ -79,7 +84,7 @@
 .form__item input,
 .form__textarea textarea {
   padding: 14px 16px;
-  margin-bottom: 40px;
+  margin-bottom: 24px;
   border: 0;
   color: $main-color;
   background-color: rgba($main-color, 0.1);
@@ -101,7 +106,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 119px;
+  margin-bottom: 112px;
   z-index: 10;
 }
 
@@ -141,7 +146,7 @@
 
   position: absolute;
   top: 0;
-  left: -30px;
+  left: -33px;
 
   width: 16px;
   height: 16px;
@@ -174,7 +179,17 @@
 
   .form__info h3 {
     @include font(32px, 45px);
-    padding-top: 83px;
+    padding-top: 79px;
+  }
+
+  .form__info span {
+    padding-top: 17px;
+  }
+
+  .form__item input,
+  .form__textarea textarea {
+    padding: 19px 20px;
+    margin-bottom: 28px;
   }
 
   .form__item input {
@@ -185,6 +200,18 @@
   .form__textarea textarea {
     width: 590px;
     min-height: 160px;
+  }
+
+  .form__submit {
+    margin-bottom: 103px;
+  }
+
+  .form__btn {
+    min-width: 280px;
+  }
+
+  .form__checkbox {
+    margin-left: 75px;
   }
 }
 

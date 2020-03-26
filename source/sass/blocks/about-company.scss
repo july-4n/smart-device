@@ -1,35 +1,41 @@
 .about-company__body {
   display: flex;
   justify-content: space-between;
-  max-width: 1230px;
-  // padding: 0 14px;
-  padding-top: 74px;
+  max-width: 1260px;
+  padding: 0 14px;
+  padding-top: 84px;
   padding-bottom: 91px;
   margin: 0 auto;
+  min-height: 220px;
 }
 
-.about-company__img img{
-  width: 317px;
-  height: 220px;
-  display: block;
+.about-company__img {
+  display: flex;
+  height: 347px;
+  margin-left: -21px;
+  margin-top: 4px;
 }
 
-
+.about-company__text {
+  max-width: 984px;
+}
 
 .about-company__text h3 {
   @include reset-list();
   @include font(36px, 51px);
-  margin-bottom: 18px;
+  margin-bottom: 11px;
+  margin-left: -37px;
   font-family: $addition-font;
 }
 
 .about-company__text p {
   @include reset-list();
   margin-bottom: 24px;
+  margin-left: -37px;
 }
 
 .about-company__text p + p {
-  margin-bottom: 39px;
+  margin-bottom: 35px;
 }
 
 .about-company__text a {
@@ -39,6 +45,7 @@
   align-self: center;
 
   padding: 13px 50px;
+  margin-left: -37px;
   border: 1px solid $decor-color;
   border-radius: $radius;
 
@@ -57,18 +64,21 @@
 
 @media (max-width: $tablet-width) {
   .about-company__body {
-    padding-left: 25px;
-    padding-right: 25px;
+    padding: 22px 25px 36px;
   }
 
-  .about-company__img img {
-    // width: 251px;
-    // height: 362px;
+  .about-company__img {
+    width: 251px;
+    height: 361px;
+  }
+
+  .about-company__text {
+    width: 70%;
   }
 
   .about-company__text h3 {
-    @include font(32px, 45px, 400);
-    margin-bottom: 23px;
+    @include font(32px, 45px);
+    margin-bottom: 20px;
   }
 
   .about-company__text p {
@@ -77,6 +87,13 @@
 
   .about-company__text p + p {
     margin-bottom: 34px;
+  }
+
+  .about-company__hidden {
+    position: relative;
+    display: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 
@@ -92,6 +109,12 @@
 
   .about-company__text {
     width: 100%;
+  }
+
+  .about-company__text h3,
+  .about-company__text p,
+  .about-company__text a {
+    margin-left: 0;
   }
 
   .about-company__text h3 {

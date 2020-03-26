@@ -1,28 +1,40 @@
 .first-screen__body {
+  position: relative;
   display: flex;
-  max-width: 1660px;
+  max-width: 1440px;
+  padding-bottom: 150px;
   margin: 0 auto;
+  min-height: 754px;
 }
-
+.first-screen {
+  width: 100%;
+}
 .first-screen__info {
+
+  position: relative;
+
   display: flex;
   justify-content: space-between;
-  padding-top: 200px;
+  width: 100%;
+  padding-top: 208px;
+  padding-left: 9px;
 }
 
 .first-screen__img {
-  position: relative;
-  display: flex;
+  position: absolute;
+  top: 202px;
+  left: 804px;
   width: 705px;
   height: 515px;
-  margin-left: auto;
+  z-index: 2;
 
   &::after {
     content: "";
 
     position: absolute;
-    top: -200px;
-    left: -130px;
+    top: -185px;
+    left: -122px;
+    z-index: -1;
 
     width: 777px;
     height: 704px;
@@ -38,9 +50,8 @@
   flex-direction: column;
   align-items: flex-start;
   padding-top: 15px;
-  padding-left: 137px;
-  margin-right: 98px;
   color: $main-color;
+  z-index: 30;
 }
 
 .first-screen__text h1 {
@@ -57,18 +68,17 @@
   @include font(22px, 34px);
   position: relative;
   max-width: 730px;
-  padding-left: 96px;
-  margin-bottom: 42px;
+  padding-left: 97px;
+  margin-bottom: 44px;
   text-transform: lowercase;
   text-align: left;
-
 
   &::before {
     content: "";
 
     position: absolute;
-    top: 16px;
-    left: 0;
+    top: 17px;
+    left: 4px;
 
     width: 66px;
     height: 2px;
@@ -82,8 +92,7 @@
   display: flex;
   height: 55px;
   padding: 17px 45px 14px 45px;
-  margin-left: 95px;
-  border: transparent;
+  margin-left: 98px;
   border-radius: $radius;
 
   background-color: $decor-color;
@@ -105,8 +114,8 @@
 .first-screen__scroll {
   @include font(14px, 16px);
   position: absolute;
-  top: 450px;
-  left: 110px;
+  top: 436px;
+  left: -41px;
 
   opacity: 0.5;
   transform: rotate(-90deg);
@@ -123,48 +132,58 @@
 }
 
 @media (max-width: $tablet-width) {
+  .first-screen__body {
+    min-height: 588px;
+  }
+
   .first-screen__info {
-    padding-top: 15px;
+    padding-top: 0;
+    padding-left: 0;
   }
 
   .first-screen__img {
+    top: 14px;
+    left: 510px;
     width: 465px;
     height: 340px;
 
     &::after {
-      content: "";
+      top: -112px;
+      left: 525px;
 
-      position: absolute;
-      top: 0;
-      left: 0;
-
-      width: 777px;
-      height: 704px;
+      width: 1016px;
+      height: 501px;
+      background-image: url("../img/first-screen/first-screen-triangle-tablet.svg");
     }
   }
 
   .first-screen__text {
-    padding-top: 114px;
+    padding-top: 89px;
     padding-left: 90px;
+    margin-right: 0;
   }
 
   .first-screen__text h1 {
     @include font(60px, 70px, 700);
+    max-width: 400px;
     margin-bottom: 32px;
   }
 
   .first-screen__text p {
     @include font(18px, 28px);
+    max-width: 390px;
     padding-left: 48px;
-    margin-bottom: 62px;
+    margin-bottom: 52px;
 
     &::before {
+      top: 14px;
+      left: 2px;
       width: 33px;
     }
   }
 
   .first-screen__btn {
-    padding: 21px 32px;
+    padding: 20px 32px;
     margin-left: 49px;
   }
 
@@ -180,13 +199,19 @@
   }
 
   .first-screen__img {
+    top: 24px;
+    left: 20px;
+
     width: 301px;
     height: 220px;
     order: 1;
 
     &::after {
-      top: -190px;
-      left: -100px;
+      top: -156px;
+      left: 131px;
+
+      width: 582px;
+      height: 505px;
     }
   }
 
@@ -194,6 +219,7 @@
     order: 2;
     padding-top: 0;
     padding-left: 15px;
+    margin-top: 183px;
   }
 
   .first-screen__text h1 {
@@ -204,7 +230,8 @@
   .first-screen__text p {
     @include font(16px, 25px);
     width: 290px;
-    margin-bottom: 42px;
+
+    margin-bottom: 35px;
   }
 
   .first-screen__btn {

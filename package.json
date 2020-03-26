@@ -52,7 +52,9 @@
   },
   "dependencies": {
     "del": "^4.1.1",
+    "imask": "^6.0.3",
     "picturefill": "^3.0.3",
-    "svg4everybody": "^2.1.9"
+    "svg4everybody": "^2.1.9",
+    "webp-hero": "0.0.0-dev.24"
   }
 }

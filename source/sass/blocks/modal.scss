@@ -1,11 +1,11 @@
 
 .modal {
-  // position: fixed;
-  // top: 50%;
-  // left: 50%;
-  // transform: translate(-50%, -50%);
-  // margin-top: -30px;
-  z-index: 100;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: -30px;
+  z-index: 200;
   width: 490px;
   min-height: 605px;
   background-color: $decor-color;

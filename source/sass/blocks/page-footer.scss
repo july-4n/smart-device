@@ -4,7 +4,7 @@
   margin: 0 auto;
   width: 100%;
   padding-bottom: 51px;
-  padding-top: 60px;
+  padding-top: 68px;
 }
 
 .page-footer__first-section {
@@ -18,7 +18,7 @@
   display: flex;
   justify-content: space-between;
   width: 216px;
-  margin-bottom: 40px;
+  margin-bottom: 47px;
 }
 
 .page-footer__logo-text {
@@ -37,11 +37,11 @@
 .page-footer__third-section h3 {
   @include reset-list();
   @include font(15px, 16px);
-  margin-bottom: 31px;
+  margin-bottom: 23px;
   font-family: $addition-font;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: $footer-text;
+  color: $background-top;
 }
 
 .page-footer__nav {
@@ -50,7 +50,12 @@
   width: 100%;
 }
 
-.page-footer__nav a {
+.page-footer__nav li:not(:last-child),
+.page-footer__contacts li:not(:last-child) {
+  padding-bottom: 5px;
+}
+
+.page-footer__nav-link {
   color: $footer-text;
   cursor: pointer;
 
@@ -63,13 +68,7 @@
   display: none;
 }
 
-.page-footer__contacts p {
-  @include reset-list();
-  color: $footer-text;
-  padding-bottom: 5px;
-}
-
-.page-footer__contacts ul {
+.page-footer__contacts {
   @include reset-list();
 }
 
@@ -77,7 +76,6 @@
   display: inline-block;
   vertical-align: middle;
   color: $footer-text;
-  padding-bottom: 5px;
   cursor: pointer;
 
   &:hover {
@@ -86,14 +84,17 @@
 }
 
 .page-footer__third-section {
-  padding-right: 14px;
+  max-height: 230px;
 }
 
+.page-footer__item {
+  color: $footer-text;
+}
 
 @media (max-width: $tablet-width) {
   .page-footer__body {
     flex-wrap: wrap;
-    padding-top: 0;
+    padding: 0 0 29px;
   }
 
   .page-footer__first-section {
@@ -109,27 +110,31 @@
   }
 
   .page-footer__second-section {
-    padding: 19px 0 0 25px;
+    padding: 34px 0 0 25px;
   }
 
   .page-footer__third-section {
-    padding: 19px 25px 0 0;
+    padding: 34px 25px 0 0;
   }
 
   .page-footer__nav {
+    position: relative;
     display: flex;
     flex-direction: column;
+    column-count: 1;
     justify-content: space-between;
   }
 }
 
 @media (max-width: $mobile-width) {
   .page-footer__body {
+    position: relative;
     flex-direction: column;
     padding-bottom: 0;
   }
 
   .page-footer__first-section {
+    position: relative;
     flex-direction: column;
     padding: 46px 15px 54px 15px;
   }
@@ -142,55 +147,69 @@
     flex-direction: column;
   }
 
+  .page-footer__second-section {
+    max-height: 260px;
+    margin-bottom: 24px;
+  }
+
   .page-footer__second-section,
   .page-footer__third-section {
+    position: relative;
     padding: 0 15px;
+  }
+
+  .page-footer__second-section h3 {
+    margin: 29px 0;
+  }
+
+  .page-footer__nav {
+    margin-bottom: 25px;
+  }
+
+  .page-footer__button {
+    position: absolute;
+    top: 32px;
+    right: 15px;
+    display: block;
+    width: 16px;
+    height: 16px;
+    border: none;
+    background: url("../img/plus.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      opacity: 0.6;
+    }
+  }
+
+  .page-footer__button--opened {
+    background-image: url("../img/minus.svg");
+    cursor: pointer;
+  }
+
+  .page-footer__accordion{
+    display: none;
+  }
+
+  .page-footer__accordion--opened {
+    display: block;
   }
 
   .page-footer__third-section {
     border-top: 1px solid $line;
   }
 
-  .page-footer__second-section h3 {
-    position: relative;
-    margin: 29px 0;
-
-    &::after {
-      content: "";
-
-      position: absolute;
-      top: 0;
-      right: 0;
-
-      width: 16px;
-      height: 16px;
-
-      background-image: url("../img/plus.svg");
-      background-repeat: no-repeat;
-    }
-  }
-
-  .page-footer__nav {
-    display: none;
-  }
-
   .page-footer__third-section h3 {
     position: relative;
     margin: 28px 0 36px;
+  }
 
-    &::after {
-      content: "";
-
-      position: absolute;
-      top: 50%;
-      right: 0;
-      transform: translateY(-50%);
-
-      width: 16px;
-      height: 1px;
-
-      background-color: #c4c4c4;
-    }
+  .page-footer__third-section .page-footer__button {
+    top: 27px;
   }
 
   .page-footer__contacts {

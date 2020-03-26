@@ -91,7 +91,10 @@ gulp.task("js", function () {
 gulp.task('vendor', function() {
   return gulp.src([
     'node_modules/picturefill/dist/picturefill.min.js',
-    'node_modules/svg4everybody/dist/svg4everybody.min.js'
+    'node_modules/svg4everybody/dist/svg4everybody.min.js',
+    'node_modules/webp-hero/dist-cjs/webp-hero.bundle.js',
+    'node_modules/webp-hero/dist-cjs/polyfills.js',
+    'node_modules/imask/dist/imask.min.js'
   ])
     .pipe(concat('vendor.js'))
     .pipe(gulp.dest('build/js'))
