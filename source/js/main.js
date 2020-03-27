@@ -5,13 +5,13 @@
 var ESC_KEYCODE = 27;
 var body = document.querySelector('body');
 var modal = document.querySelector('.modal');
-var pageHeaderBtn = document.querySelector('.page-header__btn');
+var closeBtn = document.querySelector('.page-header__btn');
 var modalCloseBtn = document.querySelector('.modal__close-btn');
 var overlay = document.querySelector('.overlay');
 var nameField = document.querySelector('.modal [type="text"]');
-var firstScreenBtn = document.querySelector('.first-screen__btn');
-var firstScreenScroll = document.querySelector('.first-screen__scroll');
-var benefits = document.querySelector('.benefits');
+var btn = document.querySelector('.first-screen__btn');
+var scroll = document.querySelector('.first-screen__scroll');
+var scrollTarget = document.querySelector('.benefits');
 var form = document.querySelector('.form');
 var accordions = document.querySelectorAll('.accordion');
 var footerButtons = document.querySelectorAll('.page-footer__button');
@@ -27,8 +27,8 @@ var messageModalInput = document.querySelector('#modal-message');
 
 
 // Модальное  окно
-if (pageHeaderBtn) {
-  pageHeaderBtn.addEventListener('click', function (evt) {
+if (closeBtn) {
+  closeBtn.addEventListener('click', function (evt) {
     evt.preventDefault();
     if (modal.classList.contains('modal--close')) {
       modal.classList.remove('modal--close');
@@ -73,15 +73,15 @@ if (overlay) {
 }
 
 // Перемещение
-if (firstScreenBtn) {
-  firstScreenBtn.addEventListener('click', function () {
+if (btn) {
+  btn.addEventListener('click', function () {
     window.scrollBy({top: (form.offsetTop - window.scrollY), behavior: 'smooth'});
   });
 }
 
-if (firstScreenScroll) {
-  firstScreenScroll.addEventListener('click', function () {
-    window.scrollBy({top: (benefits.offsetTop - window.scrollY), behavior: 'smooth'});
+if (scroll) {
+  scroll.addEventListener('click', function () {
+    window.scrollBy({top: (scrollTarget.offsetTop - window.scrollY), behavior: 'smooth'});
   });
 }
 
