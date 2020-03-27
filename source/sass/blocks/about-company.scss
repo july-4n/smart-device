@@ -2,40 +2,39 @@
   display: flex;
   justify-content: space-between;
   max-width: 1260px;
-  padding: 0 14px;
-  padding-top: 84px;
-  padding-bottom: 91px;
+  padding: 79px 14px 91px 14px;
   margin: 0 auto;
-  min-height: 220px;
 }
 
 .about-company__img {
-  display: flex;
-  height: 347px;
-  margin-left: -21px;
+  height: 317px;
   margin-top: 4px;
 }
 
+.about-company__img img {
+  max-width: 220px;
+}
 .about-company__text {
-  max-width: 984px;
+  @include reset-list();
+  margin-left: 20px;
 }
 
 .about-company__text h3 {
   @include reset-list();
   @include font(36px, 51px);
-  margin-bottom: 11px;
-  margin-left: -37px;
+  margin-bottom: 17px;
+  margin-left: -30px;
   font-family: $addition-font;
 }
 
 .about-company__text p {
   @include reset-list();
-  margin-bottom: 24px;
-  margin-left: -37px;
+  margin-bottom: 19px;
+  margin-left: -30px;
 }
 
 .about-company__text p + p {
-  margin-bottom: 35px;
+  margin-bottom: 40px;
 }
 
 .about-company__text a {
@@ -45,7 +44,7 @@
   align-self: center;
 
   padding: 13px 50px;
-  margin-left: -37px;
+  margin-left: -33px;
   border: 1px solid $decor-color;
   border-radius: $radius;
 
@@ -64,43 +63,46 @@
 
 @media (max-width: $tablet-width) {
   .about-company__body {
-    padding: 22px 25px 36px;
+    padding: 22px 25px 73px 6px;
   }
 
   .about-company__img {
-    width: 251px;
-    height: 361px;
+    min-width: 251px;
+    min-height: 362px;
+  }
+
+  .about-company__img img {
+    height: 100%;
   }
 
   .about-company__text {
-    width: 70%;
+    margin-left: -13px;
   }
 
   .about-company__text h3 {
     @include font(32px, 45px);
-    margin-bottom: 20px;
+    margin-bottom: 27px;
   }
 
   .about-company__text p {
     text-overflow: ellipsis;
   }
 
-  .about-company__text p + p {
-    margin-bottom: 34px;
-  }
-
   .about-company__hidden {
     position: relative;
     display: none;
-    overflow: hidden;
     text-overflow: ellipsis;
+  }
+
+  .about-company__text p + p {
+    margin-bottom: 44px;
   }
 }
 
 @media (max-width: $mobile-width) {
   .about-company__body {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 57px 10px 66px 30px;
+    margin-left: 0;
   }
 
   .about-company__img {
@@ -120,6 +122,9 @@
   .about-company__text h3 {
     @include font(28px, 39px, 400);
     margin-bottom: 19px;
+  }
+  .about-company__text p {
+    margin-bottom: 43px;
   }
 
   .about-company__text p + p {

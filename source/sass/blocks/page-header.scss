@@ -2,7 +2,6 @@
   display: flex;
   justify-content: space-between;
   align-self: center;
-
   max-width: 1440px;
   padding: 28px 14px 0;
   margin: 0 auto;
@@ -35,7 +34,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-top: 9px;
+  padding-top: 14px;
 }
 
 .page-header__info {
@@ -101,10 +100,18 @@
     padding: 20px 25px;
   }
 
+  .page-header__logo-text {
+    padding-top: 10px;
+  }
+
   .page-header__logo::after {
     right: -400px;
   }
 
+  .page-header__item--email {
+    margin-top: -6px;
+  }
+  
   .page-header__info {
     width: 83px;
   }

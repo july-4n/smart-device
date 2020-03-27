@@ -1,5 +1,7 @@
 'use strict';
 
+(function () {
+
 var ESC_KEYCODE = 27;
 var body = document.querySelector('body');
 var modal = document.querySelector('.modal');
@@ -60,15 +62,15 @@ window.addEventListener('keydown', function (evt) {
   }
 });
 
-// if (overlay) {
-//   overlay.addEventListener('click', function () {
-//     if (!modal.classList.contains('modal--close')) {
-//       modal.classList.add('modal--close');
-//       overlay.classList.add('overlay--close');
-//       body.classList.remove('overflow');
-//     }
-//   });
-// }
+if (overlay) {
+  overlay.addEventListener('click', function () {
+    if (!modal.classList.contains('modal--close')) {
+      modal.classList.add('modal--close');
+      overlay.classList.add('overlay--close');
+      body.classList.remove('overflow');
+    }
+  });
+}
 
 // Перемещение
 if (firstScreenBtn) {
@@ -92,6 +94,7 @@ accordions.forEach(function (accordion) {
   btn.addEventListener('click', function () {
     if (btn.classList.contains('page-footer__button--opened')) {
       btn.classList.remove('page-footer__button--opened');
+      year.classList.addClass('relative');
     } else {
       footerButtons.forEach(function (footerButton) {
         footerButton.classList.remove('page-footer__button--opened');
@@ -110,16 +113,10 @@ accordions.forEach(function (accordion) {
 });
 
 // Валидация номера телефона
+// import IMask from 'imask'
+
 // IMask(document.querySelector('#form-phone'), {mask: '+{7}(000)000-00-00'});
 // IMask(document.querySelector('#modal-phone'), {mask: '+{7}(000)000-00-00'});
-
-var element1 = document.getElementById('#form-phone');
-var element2 = document.getElementById('#modal-phone');
-var maskOptions = {
-  mask: '+{7}(000)000-00-00'
-};
-var mask = IMask(element1, maskOptions);
-var mask = IMask(element2, maskOptions);
 
 // Хранение данных в localStorage
 if (contactsForm) {
@@ -136,8 +133,9 @@ if (modalForm) {
   modalForm.addEventListener('submit', function (event) {
     event.preventDefault();
 
-    localStorage.setItem('name-modal', nameInputModal.value);
-    localStorage.setItem('phone-modal', phoneInputModal.value);
-    localStorage.setItem('message-modal', messageInputModal.value);
+    localStorage.setItem('name-modal', nameModalInput.value);
+    localStorage.setItem('phone-modal', phoneModalInput.value);
+    localStorage.setItem('message-modal', messageModalInput.value);
   });
-}
+  }
+})();

@@ -1,4 +1,5 @@
 .copyright {
+  position: static;
   width: 100%;
   display: flex;
   border-top: 1px solid $line;
@@ -8,7 +9,7 @@
   @include reset-list();
   display: flex;
   max-width: 1440px;
-  padding: 14px;
+  padding: 15px 14px 14px;
   margin: 0 auto;
   width: 100%;
 }
@@ -28,12 +29,8 @@
   opacity: 0.7;
 }
 
-.copyright__text--year {
-  margin-left: 6.5%;
-}
-
 .copyright__text--privacy {
-  margin-left: 10.5%;
+  margin-left: 32.5%;
 }
 
 @media (max-width: $tablet-width) {
@@ -46,14 +43,12 @@
     display: none;
   }
 
-  .copyright__text--year {
-    position: absolute;
-    top: -351px;
-    margin-left: 40%;
-  }
-
   .copyright__text--privacy {
     margin-left: 0;
+  }
+  .text--year {
+    position: inherit;
+    top: 0;
   }
 }
 
@@ -63,13 +58,9 @@
     align-items: center;
     padding: 28px 0 26px;
     margin: 0 auto;
-  }
 
-  .copyright__text--year {
-    top: -467px;
-    left: auto;
-    right: auto;
-    margin-left: 0;
+    position: relative;
+    height: 123px;
   }
 
   .copyright__text--privacy {

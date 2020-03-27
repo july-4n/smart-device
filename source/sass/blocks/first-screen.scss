@@ -6,42 +6,14 @@
   margin: 0 auto;
   min-height: 754px;
 }
-.first-screen {
-  width: 100%;
-}
+
 .first-screen__info {
-
   position: relative;
-
   display: flex;
   justify-content: space-between;
   width: 100%;
   padding-top: 208px;
   padding-left: 9px;
-}
-
-.first-screen__img {
-  position: absolute;
-  top: 202px;
-  left: 804px;
-  width: 705px;
-  height: 515px;
-  z-index: 2;
-
-  &::after {
-    content: "";
-
-    position: absolute;
-    top: -185px;
-    left: -122px;
-    z-index: -1;
-
-    width: 777px;
-    height: 704px;
-
-    background-image: url("../img/first-screen/triangle.svg");
-    background-repeat: no-repeat;
-  }
 }
 
 .first-screen__text {
@@ -131,6 +103,29 @@
   }
 }
 
+.first-screen__img {
+  position: absolute;
+  top: 202px;
+  left: 804px;
+  z-index: 2;
+
+  width: 705px;
+  height: 515px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -185px;
+    left: -122px;
+
+    width: 777px;
+    height: 704px;
+
+    background-image: url("../img/first-screen/triangle.svg");
+    background-repeat: no-repeat;
+  }
+}
+
 @media (max-width: $tablet-width) {
   .first-screen__body {
     min-height: 588px;
@@ -144,16 +139,18 @@
   .first-screen__img {
     top: 14px;
     left: 510px;
+
     width: 465px;
     height: 340px;
 
     &::after {
-      top: -112px;
-      left: 525px;
+      top: -154px;
+      left: -148px;
 
-      width: 1016px;
-      height: 501px;
-      background-image: url("../img/first-screen/first-screen-triangle-tablet.svg");
+      width: 573px;
+      height: 509px;
+
+      background-size: 600px auto;
     }
   }
 
@@ -193,25 +190,32 @@
 }
 
 @media (max-width: $mobile-width) {
+  .first-screen__body {
+    min-height: 575px;
+    padding-bottom: 0;
+  }
+
   .first-screen__info {
     flex-direction: column;
     padding-top: 30px;
   }
 
   .first-screen__img {
-    top: 24px;
-    left: 20px;
+    top: 21px;
+    left: auto;
+    margin-left: 27px;
 
     width: 301px;
     height: 220px;
     order: 1;
 
     &::after {
-      top: -156px;
-      left: 131px;
+      top: -145px;
+      left: 47px;
 
       width: 582px;
       height: 505px;
+      background-size: 580px auto;
     }
   }
 
@@ -224,20 +228,17 @@
 
   .first-screen__text h1 {
     @include font(40px, 47px, 700);
-
+    margin-bottom: 27px;
   }
 
   .first-screen__text p {
     @include font(16px, 25px);
-    width: 290px;
-
-    margin-bottom: 35px;
+    margin-bottom: 42px;
   }
 
   .first-screen__btn {
-    padding: 17px 31px;
+    padding: 16px 34px;
     margin-left: 0;
-
   }
 
   .first-screen__btn--desk {

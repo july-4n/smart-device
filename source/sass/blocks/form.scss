@@ -72,7 +72,8 @@
   z-index: 10;
 }
 
-.form__item {
+.form__item,
+.form__textarea {
   @include reset-list();
 }
 
@@ -90,6 +91,11 @@
   background-color: rgba($main-color, 0.1);
 }
 
+.form__textarea {
+  margin-top: 18px;
+  margin-bottom: 11px;
+}
+
 .form__item input::placeholder,
 .form__textarea textarea::placeholder {
   color: $main-color;
@@ -102,11 +108,19 @@
   border: none;
 }
 
+.form input:focus,
+.form input:hover,
+.form textarea:focus,
+.form textarea:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
 .form__submit {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 112px;
+  margin-bottom: 116px;
   z-index: 10;
 }
 
@@ -132,6 +146,10 @@
   }
 }
 
+.form__checkbox input {
+  display: none;
+}
+
 .form__checkbox {
   @include reset-list();
   @include font(14px, 16px);
@@ -139,6 +157,7 @@
   display: inline-block;
   margin-left: 70px;
   color: $main-color;
+  cursor: pointer;
   opacity: 0.8;
 
   &::before {
@@ -156,10 +175,6 @@
   background-position: center;
   background-repeat: no-repeat;
   }
-}
-
-.form__checkbox input {
-  display: none;
 }
 
 @media (max-width: $tablet-width) {
@@ -188,13 +203,17 @@
 
   .form__item input,
   .form__textarea textarea {
-    padding: 19px 20px;
+    padding: 17px 20px;
     margin-bottom: 28px;
   }
 
   .form__item input {
-    width: 290px;
-    height: 51px;
+    margin-bottom: 28px;
+  }
+
+  .form__item input {
+    width: 279px;
+    height: 50px;
   }
 
   .form__textarea textarea {
@@ -203,7 +222,7 @@
   }
 
   .form__submit {
-    margin-bottom: 103px;
+    margin-bottom: 106px;
   }
 
   .form__btn {
@@ -211,7 +230,12 @@
   }
 
   .form__checkbox {
+    padding-top: 10px;
     margin-left: 75px;
+
+    &::before {
+      top: 10px;
+    }
   }
 }
 
@@ -226,23 +250,50 @@
 
   .form__info h3 {
     @include font(28px, 39px);
-    padding-top: 33px;
+    padding-top: 28px;
   }
 
+  .form__info span {
+    padding-bottom: 23px;
+  }
+
+  .form__item input {
+    width: 279px;
+    height: 50px;
+  }
+
+  .form__item input {
+    width: 290px;
+    height: 51px;
+  }
+
+  .form__textarea {
+    margin-top: 0;
+  }
   .form__textarea textarea {
     width: 290px;
     min-height: 104px;
+    margin-bottom: 21px;
   }
 
   .form__submit {
     flex-direction: column;
+    margin-bottom: 42px;
   }
 
   .form__btn {
-    margin-bottom: 30px;
+    min-width: 290px;
+    width: 100%;
+    margin-bottom: 21px;
   }
 
   .form__checkbox {
     @include font(14px, 16px);
+    margin-left: 0;
+    padding-left: 35px;
+
+    &::before {
+      left: 2px;
+    }
   }
 }
