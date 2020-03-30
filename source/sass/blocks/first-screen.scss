@@ -61,17 +61,11 @@
 
 .first-screen__btn {
   @include font(16px, 19px, 700);
-  display: flex;
   height: 55px;
   padding: 17px 45px 14px 45px;
   margin-left: 98px;
-  border-radius: $radius;
-
   background-color: $decor-color;
-  color: $main-color;
-
-  font-family: $addition-font;
-  text-transform: uppercase;
+  border: 0;
   letter-spacing: 0.05em;
 
   &:hover {
@@ -192,7 +186,7 @@
 @media (max-width: $mobile-width) {
   .first-screen__body {
     min-height: 575px;
-    padding-bottom: 0;
+    padding: 0 15px;
   }
 
   .first-screen__info {
@@ -222,7 +216,7 @@
   .first-screen__text {
     order: 2;
     padding-top: 0;
-    padding-left: 15px;
+    padding-left: 0;
     margin-top: 183px;
   }
 
@@ -237,7 +231,7 @@
   }
 
   .first-screen__btn {
-    padding: 16px 34px;
+    padding: 16px 32px;
     margin-left: 0;
   }
 

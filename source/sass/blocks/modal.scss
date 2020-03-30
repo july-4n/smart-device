@@ -1,4 +1,3 @@
-
 .modal {
   position: fixed;
   top: 50%;
@@ -8,6 +7,11 @@
   transform: translate(-50%, -50%);
   z-index: 200;
   background-color: $decor-color;
+  display: none;
+}
+
+.modal.modal--open {
+  display: block;
 }
 
 .modal__info {
@@ -27,6 +31,7 @@
 
 .modal__info span {
   display: inline-block;
+  vertical-align: baseline;
   padding: 14px 0 30px;
   color: $main-color;
 }
@@ -39,7 +44,10 @@
   width: 20px;
   height: 20px;
 
-  background: url("../img/close.svg") top right no-repeat transparent;
+  background: url("../img/close.svg");
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-color: transparent;
   border: 0;
   cursor: pointer;
   font-size: 0;
@@ -96,20 +104,9 @@
 }
 
 .modal__btn {
-  @include font(14px, 16px, 700);
   width: 100%;
-  display: inline-block;
   padding: 13.5px 0;
   margin-bottom: 34px;
-
-  border: 1px solid $main-color;
-  border-radius: $radius;
-
-  background-color: transparent;
-  color: $main-color;
-
-  font-family: $addition-font;
-  text-transform: uppercase;
   letter-spacing: 0.05em;
   cursor: pointer;
 
@@ -121,29 +118,46 @@
 .modal__checkbox {
   @include reset-list();
   @include font(14px, 16px);
-  width: 385px;
-  margin: 0 auto;
   position: relative;
-  display: inline-block;
-  margin-left: 50px;
+  margin-left: 70px;
   color: $main-color;
+  cursor: pointer;
   opacity: 0.8;
+}
 
-  &::before {
-    content: "";
+.modal__checkbox label {
+  position: relative;
+  display: block;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.modal__checkbox label::before {
+  content: "";
 
   position: absolute;
   top: 0;
-  left: -50px;
+  left: -68px;
 
   width: 16px;
   height: 16px;
 
   border: 1px solid $main-color;
+}
+
+.modal__checkbox input:checked + label::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: -68pxv;
+
   background-image: url(../img/checkbox.svg);
   background-position: center;
   background-repeat: no-repeat;
-  }
 }
 
 .modal__checkbox input {

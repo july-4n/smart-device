@@ -1,0 +1,18 @@
+.btn {
+  @include font(14px, 16px, 700);
+  display: inline-block;
+  font-family: $addition-font;
+  text-transform: uppercase;
+  border: 1px solid $main-color;
+  border-radius: $radius;
+  color: $main-color;
+  background-color: transparent;
+  align-self: center;
+  cursor: pointer;
+}
+
+@media (max-width: $tablet-width) {
+.btn--no {
+  display: none;
+  }
+}

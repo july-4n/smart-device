@@ -14,6 +14,7 @@
   align-self: center;
   width: 202px;
   z-index: 10;
+  cursor: pointer;
 
   &::after {
     content: "";
@@ -71,24 +72,8 @@
 }
 
 .page-header__btn {
-  @include font(14px, 16px, 700);
-  display: inline-block;
-  align-self: center;
-
   padding: 14px 32px;
   margin-left: 51px;
-
-  z-index: 10;
-
-  font-family: $addition-font;
-  text-transform: uppercase;
-
-  color: $main-color;
-  background-color: transparent;
-  border: 1px solid $main-color;
-  border-radius: $radius;
-
-  cursor: pointer;
 
   &:hover {
     background-color: $decor-color;

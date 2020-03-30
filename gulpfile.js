@@ -42,7 +42,7 @@ gulp.task("server", function () {
   gulp.watch("source/sass/**/*.{scss,sass}", gulp.series("css"));
   gulp.watch("source/img/icon-*.svg", gulp.series("sprite", "html", "refresh"));
   gulp.watch("source/*.html", gulp.series("html", "refresh"));
-  gulp.watch("source/js/*.js", gulp.series("vendor", "js", "refresh"));
+  gulp.watch("source/js/*.js", gulp.series( "js", "refresh"));
 });
 
 gulp.task("refresh", function (done) {
@@ -92,12 +92,11 @@ gulp.task('vendor', function() {
   return gulp.src([
     'node_modules/picturefill/dist/picturefill.min.js',
     'node_modules/svg4everybody/dist/svg4everybody.min.js',
-    'node_modules/webp-hero/dist-cjs/webp-hero.bundle.js',
-    'node_modules/webp-hero/dist-cjs/polyfills.js',
-    'node_modules/imask/dist/imask.min.js'
+    'node_modules/imask/dist/imask.min.js',
+    'node_modules/nodelist-foreach-polyfill'
   ])
     .pipe(concat('vendor.js'))
-    .pipe(gulp.dest('build/js'))
+    .pipe(gulp.dest('source/js'))
 });
 
 gulp.task("copy", function () {

@@ -14,6 +14,7 @@
 .about-company__img img {
   max-width: 220px;
 }
+
 .about-company__text {
   @include reset-list();
   margin-left: 20px;
@@ -38,21 +39,11 @@
 }
 
 .about-company__text a {
-  @include font(14px, 16px, 700);
-
-  display: inline-block;
-  align-self: center;
-
   padding: 13px 50px;
   margin-left: -33px;
-  border: 1px solid $decor-color;
-  border-radius: $radius;
-
+  border-color: $decor-color;
   background-color: $main-color;
   color: $decor-color;
-
-  font-family: $addition-font;
-  text-transform: uppercase;
   letter-spacing: 0.05em;
 
   &:hover {

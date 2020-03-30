@@ -37,7 +37,6 @@
   top: 214px;
   left: 55%;
   width: 100%;
-
   text-transform: uppercase;
   color: $footer-text;
 }
@@ -63,7 +62,7 @@
   width: 100%;
 }
 
-.page-footer__nav li:not(:last-child),
+.page-footer__nav li,
 .page-footer__contacts li:not(:last-child) {
   padding-bottom: 3px;
 }
@@ -222,6 +221,7 @@
 
   .page-footer__accordion {
     display: none;
+    transition: 0.5s;
   }
 
   .page-footer__accordion--opened {
@@ -244,9 +244,5 @@
 
   .page-footer__contacts {
     margin-bottom: 25px;
-  }
-
-  .page-footer__accordion {
-    transition: 0.5s ease;
   }
 }

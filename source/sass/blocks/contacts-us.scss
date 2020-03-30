@@ -1,15 +1,15 @@
-.form {
+.contacts-us {
   background-color: $decor-color;
 }
 
-.form__body {
+.contacts-us__body {
   display: flex;
   max-width: 1200px;
   padding: 0 14px;
   margin: 0 auto;
 }
 
-.form__info {
+.contacts-us__info {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -27,7 +27,7 @@
     width: 1890px;
     height: 765px;
 
-    background-image: url("../img/form-triangle.svg");
+    background-image: url("../img/contacts-us-triangle.svg");
     background-repeat: no-repeat;
   }
 
@@ -50,7 +50,7 @@
   }
 }
 
-.form__info h3 {
+.contacts-us__info h3 {
   @include reset-list();
   @include font(36px, 51px);
   padding-top: 90px;
@@ -58,13 +58,14 @@
   color: $main-color;
 }
 
-.form__info span {
+.contacts-us__info span {
   display: inline-block;
+  vertical-align: baseline;
   padding: 10px 0 49px;
   color: $main-color;
 }
 
-.form__info form {
+.contacts-us__info form {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -72,18 +73,18 @@
   z-index: 10;
 }
 
-.form__item,
-.form__textarea {
+.contacts-us__item,
+.contacts-us__textarea {
   @include reset-list();
 }
 
-.form__item input {
+.contacts-us__item input {
   width: 270px;
   height: 50px;
 }
 
-.form__item input,
-.form__textarea textarea {
+.contacts-us__item input,
+.contacts-us__textarea textarea {
   padding: 14px 16px;
   margin-bottom: 24px;
   border: 0;
@@ -91,32 +92,32 @@
   background-color: rgba($main-color, 0.1);
 }
 
-.form__textarea {
+.contacts-us__textarea {
   margin-top: 18px;
   margin-bottom: 11px;
 }
 
-.form__item input::placeholder,
-.form__textarea textarea::placeholder {
+.contacts-us__item input::placeholder,
+.contacts-us__textarea textarea::placeholder {
   color: $main-color;
 }
 
-.form__textarea textarea {
+.contacts-us__textarea textarea {
   width: 570px;
   min-height: 154px;
   resize: none;
   border: none;
 }
 
-.form input:focus,
-.form input:hover,
-.form textarea:focus,
-.form textarea:hover {
+.contacts-us input:focus,
+.contacts-us input:hover,
+.contacts-us textarea:focus,
+.contacts-us textarea:hover {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
   cursor: pointer;
 }
 
-.form__submit {
+.contacts-us__submit {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -124,20 +125,9 @@
   z-index: 10;
 }
 
-.form__btn {
-  @include font(14px, 16px, 700);
+.contacts-us__btn {
   min-width: 270px;
-  display: inline-block;
   padding: 13.5px 70px;
-
-  border: 1px solid $main-color;
-  border-radius: $radius;
-
-  background-color: transparent;
-  color: $main-color;
-
-  font-family: $addition-font;
-  text-transform: uppercase;
   letter-spacing: 0.05em;
   cursor: pointer;
 
@@ -146,22 +136,32 @@
   }
 }
 
-.form__checkbox input {
+.contacts-us__checkbox input {
   display: none;
 }
 
-.form__checkbox {
+.contacts-us__checkbox {
   @include reset-list();
   @include font(14px, 16px);
   position: relative;
-  display: inline-block;
   margin-left: 70px;
   color: $main-color;
   cursor: pointer;
   opacity: 0.8;
+}
 
-  &::before {
-    content: "";
+.contacts-us__checkbox label {
+  position: relative;
+  display: block;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.contacts-us__checkbox label::before {
+  content: "";
 
   position: absolute;
   top: 0;
@@ -171,18 +171,26 @@
   height: 16px;
 
   border: 1px solid $main-color;
+}
+
+.contacts-us__checkbox input:checked + label::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: -33px;
+
   background-image: url(../img/checkbox.svg);
   background-position: center;
   background-repeat: no-repeat;
-  }
 }
 
 @media (max-width: $tablet-width) {
-  .form__body {
+  .contacts-us__body {
     padding: 0 25px;
   }
 
-  .form__info {
+  .contacts-us__info {
     max-width: 590px;
     margin: 0 auto;
 
@@ -192,44 +200,44 @@
     }
   }
 
-  .form__info h3 {
+  .contacts-us__info h3 {
     @include font(32px, 45px);
     padding-top: 79px;
   }
 
-  .form__info span {
+  .contacts-us__info span {
     padding-top: 17px;
   }
 
-  .form__item input,
-  .form__textarea textarea {
+  .contacts-us__item input,
+  .contacts-us__textarea textarea {
     padding: 17px 20px;
     margin-bottom: 28px;
   }
 
-  .form__item input {
+  .contacts-us__item input {
     margin-bottom: 28px;
   }
 
-  .form__item input {
+  .contacts-us__item input {
     width: 279px;
     height: 50px;
   }
 
-  .form__textarea textarea {
+  .contacts-us__textarea textarea {
     width: 590px;
     min-height: 160px;
   }
 
-  .form__submit {
+  .contacts-us__submit {
     margin-bottom: 106px;
   }
 
-  .form__btn {
+  .contacts-us__btn {
     min-width: 280px;
   }
 
-  .form__checkbox {
+  .contacts-us__checkbox {
     padding-top: 10px;
     margin-left: 75px;
 
@@ -240,54 +248,54 @@
 }
 
 @media (max-width: $mobile-width) {
-  .form__body {
+  .contacts-us__body {
     padding: 0 15px;
   }
 
-  .form__info {
+  .contacts-us__info {
     max-width: 290px;
   }
 
-  .form__info h3 {
+  .contacts-us__info h3 {
     @include font(28px, 39px);
     padding-top: 28px;
   }
 
-  .form__info span {
+  .contacts-us__info span {
     padding-bottom: 23px;
   }
 
-  .form__item input {
+  .contacts-us__item input {
     width: 279px;
     height: 50px;
   }
 
-  .form__item input {
+  .contacts-us__item input {
     width: 290px;
     height: 51px;
   }
 
-  .form__textarea {
+  .contacts-us__textarea {
     margin-top: 0;
   }
-  .form__textarea textarea {
+  .contacts-us__textarea textarea {
     width: 290px;
     min-height: 104px;
     margin-bottom: 21px;
   }
 
-  .form__submit {
+  .contacts-us__submit {
     flex-direction: column;
     margin-bottom: 42px;
   }
 
-  .form__btn {
+  .contacts-us__btn {
     min-width: 290px;
     width: 100%;
     margin-bottom: 21px;
   }
 
-  .form__checkbox {
+  .contacts-us__checkbox {
     @include font(14px, 16px);
     margin-left: 0;
     padding-left: 35px;

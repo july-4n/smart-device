@@ -1,92 +1,84 @@
 'use strict';
 
-(function () {
+(function() {
 
 var ESC_KEYCODE = 27;
 var body = document.querySelector('body');
 var modal = document.querySelector('.modal');
-var closeBtn = document.querySelector('.page-header__btn');
-var modalCloseBtn = document.querySelector('.modal__close-btn');
+var modalOpenBtn = document.querySelector('.page-header__btn');
+var modalCloseBtn = modal.querySelector('.modal__close-btn');
+var nameModalInput = modal.querySelector('[name=name-modal]');
 var overlay = document.querySelector('.overlay');
-var nameField = document.querySelector('.modal [type="text"]');
-var btn = document.querySelector('.first-screen__btn');
-var scroll = document.querySelector('.first-screen__scroll');
-var scrollTarget = document.querySelector('.benefits');
-var form = document.querySelector('.form');
+var scrollForm = document.querySelector('.first-screen__btn');
+var scrollBenefits = document.querySelector('.first-screen__scroll');
+var benefits = document.querySelector('.benefits');
+var form = document.querySelector('.contacts-us');
 var accordions = document.querySelectorAll('.accordion');
-var footerButtons = document.querySelectorAll('.page-footer__button');
+var accordionButtons = document.querySelectorAll('.page-footer__button');
 var footerAccordions = document.querySelectorAll('.page-footer__accordion');
-var contactsForm = document.querySelector('.form .form');
-var nameFormInput = document.querySelector('#form-user-name');
-var phoneFormInput = document.querySelector('#form-phone');
-var messageFormInput = document.querySelector('#form-message');
-var modalForm = document.querySelector('.modal .form');
+var contactsForm = document.querySelector('.contacts-us form');
+var nameFormInput = document.querySelector('#contacts-us-user-name');
+var phoneFormInput = document.querySelector('#contacts-us-phone');
+var messageFormInput = document.querySelector('#contacts-us-message');
+var modalForm = document.querySelector('.modal form');
 var nameModalInput = document.querySelector('#modal-user-name');
 var phoneModalInput = document.querySelector('#modal-phone');
 var messageModalInput = document.querySelector('#modal-message');
 
-
-// Модальное  окно
-if (closeBtn) {
-  closeBtn.addEventListener('click', function (evt) {
-    evt.preventDefault();
-    if (modal.classList.contains('modal--close')) {
-      modal.classList.remove('modal--close');
-      overlay.classList.remove('overlay--close');
-      body.classList.add('overflow');
-      nameField.focus();
-    }
-  });
-}
-
-
-if (modalCloseBtn) {
-  modalCloseBtn.addEventListener('click', function () {
-    if (!modal.classList.contains('modal--close')) {
-      modal.classList.add('modal--close');
-      overlay.classList.add('overlay--close');
-      body.classList.remove('overflow');
-    }
-  });
-}
-
-
-window.addEventListener('keydown', function (evt) {
+var onModalEscPress = function (evt) {
   if (evt.keyCode === ESC_KEYCODE) {
-    evt.preventDefault();
-    if (!modal.classList.contains('modal--close')) {
-      modal.classList.add('modal--close');
-      overlay.classList.add('overlay--close');
-      body.classList.remove('overflow');
-    }
+    closeModal();
   }
+};
+
+var onOverlayClick = function () {
+  closeModal();
+};
+
+var openModal = function () {
+  modal.classList.add('modal--open');
+  overlay.classList.add('overlay--show');
+  body.classList.add('overflow');
+};
+
+var closeModal = function () {
+  modal.classList.remove('modal--open');
+  overlay.classList.remove('overlay--show');
+  document.addEventListener('keydown', onModalEscPress);
+  overlay.addEventListener('click', onOverlayClick);
+  body.classList.remove('overflow');
+};
+
+modal.addEventListener('click', function (evt) {
+  evt.stopPropagation();
 });
 
-if (overlay) {
-  overlay.addEventListener('click', function () {
-    if (!modal.classList.contains('modal--close')) {
-      modal.classList.add('modal--close');
-      overlay.classList.add('overlay--close');
-      body.classList.remove('overflow');
-    }
-  });
-}
+modalOpenBtn.addEventListener('click', function (evt) {
+  evt.preventDefault();
+  openModal();
+  nameModalInput.focus();
+});
+
+modalCloseBtn.addEventListener('click', function (evt) {
+  evt.preventDefault();
+  closeModal();
+});
 
 // Перемещение
-if (btn) {
-  btn.addEventListener('click', function () {
+if (scrollForm) {
+  scrollForm.addEventListener('click', function () {
     window.scrollBy({top: (form.offsetTop - window.scrollY), behavior: 'smooth'});
   });
 }
 
-if (scroll) {
-  scroll.addEventListener('click', function () {
-    window.scrollBy({top: (scrollTarget.offsetTop - window.scrollY), behavior: 'smooth'});
+if (scrollBenefits) {
+  scrollBenefits.addEventListener('click', function () {
+    window.scrollBy({top: (benefits.offsetTop - window.scrollY), behavior: 'smooth'});
   });
 }
 
-
 // Аккордеон
+
 accordions.forEach(function (accordion) {
   var btn = accordion.querySelector('.page-footer__button');
   var accordion = accordion.querySelector('.page-footer__accordion');
@@ -94,9 +86,8 @@ accordions.forEach(function (accordion) {
   btn.addEventListener('click', function () {
     if (btn.classList.contains('page-footer__button--opened')) {
       btn.classList.remove('page-footer__button--opened');
-      year.classList.addClass('relative');
     } else {
-      footerButtons.forEach(function (footerButton) {
+      accordionButtons.forEach(function (footerButton) {
         footerButton.classList.remove('page-footer__button--opened');
       });
       btn.classList.add('page-footer__button--opened');
@@ -112,16 +103,11 @@ accordions.forEach(function (accordion) {
   });
 });
 
-// Валидация номера телефона
-// import IMask from 'imask'
-
-// IMask(document.querySelector('#form-phone'), {mask: '+{7}(000)000-00-00'});
-// IMask(document.querySelector('#modal-phone'), {mask: '+{7}(000)000-00-00'});
-
 // Хранение данных в localStorage
+
 if (contactsForm) {
-  contactsForm.addEventListener('submit', function (event) {
-    event.preventDefault();
+  contactsForm.addEventListener('submit', function (evt) {
+    evt.preventDefault();
 
     localStorage.setItem('name-field', nameFormInput.value);
     localStorage.setItem('phone-field', phoneFormInput.value);
@@ -130,12 +116,21 @@ if (contactsForm) {
 }
 
 if (modalForm) {
-  modalForm.addEventListener('submit', function (event) {
-    event.preventDefault();
+  modalForm.addEventListener('submit', function (evt) {
+    evt.preventDefault();
 
     localStorage.setItem('name-modal', nameModalInput.value);
     localStorage.setItem('phone-modal', phoneModalInput.value);
     localStorage.setItem('message-modal', messageModalInput.value);
   });
-  }
+}
+
+//  Маска номера телефона
+
+var maskOptions = {
+  mask: '+{7}(000)000-00-00'
+};
+var mask = IMask(phoneModalInput, maskOptions);
+var mask = IMask(phoneFormInput, maskOptions);
+
 })();
