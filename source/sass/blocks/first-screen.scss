@@ -4,7 +4,7 @@
   max-width: 1440px;
   padding-bottom: 150px;
   margin: 0 auto;
-  min-height: 754px;
+  min-height: 789px;
 }
 
 .first-screen__info {
@@ -29,7 +29,7 @@
 .first-screen__text h1 {
   @include reset-list();
   @include font(80px, 94px, 700);
-  margin-bottom: 29px;
+  margin-bottom: 31px;
   font-family: $addition-font;
   letter-spacing: 0.07em;
   text-transform: uppercase;
@@ -41,7 +41,7 @@
   position: relative;
   max-width: 730px;
   padding-left: 97px;
-  margin-bottom: 44px;
+  margin-bottom: 40px;
   text-transform: lowercase;
   text-align: left;
 
@@ -49,7 +49,7 @@
     content: "";
 
     position: absolute;
-    top: 17px;
+    top: 13px;
     left: 4px;
 
     width: 66px;
@@ -63,10 +63,11 @@
   @include font(16px, 19px, 700);
   height: 55px;
   padding: 17px 45px 14px 45px;
-  margin-left: 98px;
+  margin-left: -128px;
   background-color: $decor-color;
   border: 0;
   letter-spacing: 0.05em;
+  transition: 0.5s ease;
 
   &:hover {
     opacity: 0.7;
@@ -81,12 +82,10 @@
   @include font(14px, 16px);
   position: absolute;
   top: 436px;
-  left: -41px;
-
+  left: -35px;
   opacity: 0.5;
   transform: rotate(-90deg);
-  background: none;
-  border: none;
+  transition: 0.5s ease;
   cursor: pointer;
 
   color: $main-color;
@@ -195,17 +194,17 @@
   }
 
   .first-screen__img {
-    top: 21px;
+    top: 18px;
     left: auto;
-    margin-left: 27px;
+    margin-left: 7px;
 
     width: 301px;
     height: 220px;
     order: 1;
 
     &::after {
-      top: -145px;
-      left: 47px;
+      top: -143px;
+      left: 51px;
 
       width: 582px;
       height: 505px;
@@ -222,7 +221,7 @@
 
   .first-screen__text h1 {
     @include font(40px, 47px, 700);
-    margin-bottom: 27px;
+    margin-bottom: 28px;
   }
 
   .first-screen__text p {

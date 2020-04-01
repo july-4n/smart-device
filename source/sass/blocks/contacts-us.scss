@@ -35,8 +35,8 @@
     content: "";
 
     position: absolute;
-    top: 160px;
-    left: -627px;
+    top: 161px;
+    left: -625px;
 
     width: 511px;
     height: 288px;
@@ -47,6 +47,7 @@
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
     background: url("../img/paper-airplane@1x.webp"), url("../img/paper-airplane@2x.png");
+    background-size: 1022px 0;
   }
 }
 
@@ -94,7 +95,6 @@
 
 .contacts-us__textarea {
   margin-top: 18px;
-  margin-bottom: 11px;
 }
 
 .contacts-us__item input::placeholder,
@@ -121,14 +121,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 116px;
+  margin-bottom: 113px;
   z-index: 10;
+
 }
 
 .contacts-us__btn {
   min-width: 270px;
   padding: 13.5px 70px;
+  margin-top: 14px;
   letter-spacing: 0.05em;
+  outline: none;
   cursor: pointer;
 
   &:hover {
@@ -137,14 +140,13 @@
 }
 
 .contacts-us__checkbox input {
-  display: none;
+  opacity: 0;
 }
 
 .contacts-us__checkbox {
   @include reset-list();
   @include font(14px, 16px);
   position: relative;
-  margin-left: 70px;
   color: $main-color;
   cursor: pointer;
   opacity: 0.8;
@@ -153,6 +155,7 @@
 .contacts-us__checkbox label {
   position: relative;
   display: block;
+  padding-left: 70px;
   cursor: pointer;
 
   &:hover {
@@ -165,7 +168,7 @@
 
   position: absolute;
   top: 0;
-  left: -33px;
+  left: 38px;
 
   width: 16px;
   height: 16px;
@@ -178,7 +181,7 @@
 
   position: absolute;
   top: 0;
-  left: -33px;
+  left: 38px;
 
   background-image: url(../img/checkbox.svg);
   background-position: center;
@@ -206,12 +209,12 @@
   }
 
   .contacts-us__info span {
-    padding-top: 17px;
+    padding: 17px 0 53px;
   }
 
   .contacts-us__item input,
   .contacts-us__textarea textarea {
-    padding: 17px 20px;
+    padding: 13px 20px;
     margin-bottom: 28px;
   }
 
@@ -227,19 +230,21 @@
   .contacts-us__textarea textarea {
     width: 590px;
     min-height: 160px;
+    margin-bottom: 14px;
   }
 
   .contacts-us__submit {
-    margin-bottom: 106px;
+    margin-bottom: 105px;
   }
 
   .contacts-us__btn {
     min-width: 280px;
+    margin-top: 22px;
   }
 
   .contacts-us__checkbox {
-    padding-top: 10px;
-    margin-left: 75px;
+    padding-top: 14px;
+    margin-left: 4px;
 
     &::before {
       top: 10px;
@@ -266,42 +271,46 @@
   }
 
   .contacts-us__item input {
-    width: 279px;
-    height: 50px;
-  }
-
-  .contacts-us__item input {
     width: 290px;
     height: 51px;
+    margin-bottom: 31px;
   }
 
   .contacts-us__textarea {
     margin-top: 0;
   }
+
   .contacts-us__textarea textarea {
     width: 290px;
     min-height: 104px;
-    margin-bottom: 21px;
+    margin-bottom: 3px;
+    padding-top: 15px;
   }
 
   .contacts-us__submit {
     flex-direction: column;
-    margin-bottom: 42px;
+    margin-bottom: 43px;
   }
 
   .contacts-us__btn {
     min-width: 290px;
     width: 100%;
-    margin-bottom: 21px;
   }
 
   .contacts-us__checkbox {
     @include font(14px, 16px);
     margin-left: 0;
-    padding-left: 35px;
+  }
+
+  .contacts-us__checkbox label {
+    padding-left: 33px;
 
     &::before {
-      left: 2px;
+      left: 0;
     }
+  }
+
+  .contacts-us__checkbox input:checked + label::before {
+    left: 0;
   }
 }

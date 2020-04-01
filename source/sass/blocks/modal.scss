@@ -1,13 +1,13 @@
 .modal {
   position: fixed;
+  display: none;
   top: 50%;
   left: 50%;
-  width: 490px;
-  min-height: 605px;
   transform: translate(-50%, -50%);
   z-index: 200;
+  width: 490px;
+  margin-top: -235px;
   background-color: $decor-color;
-  display: none;
 }
 
 .modal.modal--open {
@@ -25,6 +25,7 @@
 .modal__info b {
   @include font(28px, 39px);
   padding-top: 33px;
+  padding-bottom: 10px;
   font-family: $addition-font;
   color: $main-color;
 }
@@ -32,7 +33,8 @@
 .modal__info span {
   display: inline-block;
   vertical-align: baseline;
-  padding: 14px 0 30px;
+  max-width: 383px;
+  padding: 0 0 30px;
   color: $main-color;
 }
 
@@ -49,6 +51,7 @@
   background-repeat: no-repeat;
   background-color: transparent;
   border: 0;
+  outline: none;
   cursor: pointer;
   font-size: 0;
 }
@@ -58,7 +61,8 @@
   flex-direction: column;
 }
 
-.modal__item {
+.modal__item,
+.modal__textarea  {
   @include reset-list();
 }
 
@@ -67,8 +71,7 @@
   height: 51px;
 }
 
-.modal__item input,
-.modal__textarea textarea {
+.modal__item input {
   padding: 14px 24px;
   margin-bottom: 30px;
   border: 0;
@@ -76,16 +79,19 @@
   background-color: rgba($main-color, 0.1);
 }
 
-.modal__item input::placeholder,
-.modal__textarea textarea::placeholder {
-  color: $main-color;
-}
-
 .modal__textarea textarea {
   width: 100%;
   min-height: 104px;
+  padding: 14px 24px;
   resize: none;
   border: none;
+  color: $main-color;
+  background-color: rgba($main-color, 0.1);
+}
+
+.modal__item input::placeholder,
+.modal__textarea textarea::placeholder {
+  color: $main-color;
 }
 
 .modal input:focus,
@@ -100,13 +106,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 36px;
+  margin-top: 26px;
 }
 
 .modal__btn {
   width: 100%;
-  padding: 13.5px 0;
-  margin-bottom: 34px;
+  padding: 14.5px 0;
+  margin-bottom: 37px;
   letter-spacing: 0.05em;
   cursor: pointer;
 
@@ -119,7 +125,8 @@
   @include reset-list();
   @include font(14px, 16px);
   position: relative;
-  margin-left: 70px;
+  width: 100%;
+  margin-bottom: 35px;
   color: $main-color;
   cursor: pointer;
   opacity: 0.8;
@@ -127,7 +134,9 @@
 
 .modal__checkbox label {
   position: relative;
-  display: block;
+  display: inline-block;
+  max-width: 400px;
+  padding-left: 50px;
   cursor: pointer;
 
   &:hover {
@@ -140,7 +149,7 @@
 
   position: absolute;
   top: 0;
-  left: -68px;
+  left: 0;
 
   width: 16px;
   height: 16px;
@@ -153,7 +162,7 @@
 
   position: absolute;
   top: 0;
-  left: -68pxv;
+  left: 0;
 
   background-image: url(../img/checkbox.svg);
   background-position: center;
@@ -161,17 +170,6 @@
 }
 
 .modal__checkbox input {
-  display: none;
-}
-
-@media (max-width: $tablet-width) {
-  .modal {
-    display: none;
-  }
-}
-
-@media (max-width: $mobile-width) {
-  .modal {
-    display: none;
-  }
+  position: absolute;
+  opacity: 0;
 }

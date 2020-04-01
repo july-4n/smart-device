@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   max-width: 1260px;
-  padding: 79px 14px 91px 14px;
+  padding: 79px 14px 92px;
   margin: 0 auto;
 }
 
@@ -23,8 +23,7 @@
 .about-company__text h3 {
   @include reset-list();
   @include font(36px, 51px);
-  margin-bottom: 17px;
-  margin-left: -30px;
+  margin: -1px 0 17px -30px;
   font-family: $addition-font;
 }
 
@@ -39,8 +38,8 @@
 }
 
 .about-company__text a {
-  padding: 13px 50px;
-  margin-left: -33px;
+  padding: 14px 50px;
+  margin-left: -29px;
   border-color: $decor-color;
   background-color: $main-color;
   color: $decor-color;
@@ -54,12 +53,13 @@
 
 @media (max-width: $tablet-width) {
   .about-company__body {
-    padding: 22px 25px 73px 6px;
+    padding: 24px 25px 75px 4px;
   }
 
   .about-company__img {
     min-width: 251px;
     min-height: 362px;
+    margin-top: 0;
   }
 
   .about-company__img img {
@@ -79,6 +79,11 @@
     text-overflow: ellipsis;
   }
 
+  .about-company__text a {
+    padding: 12px 47px;
+    margin-left: -27px;
+  }
+
   .about-company__hidden {
     position: relative;
     display: none;
@@ -92,7 +97,7 @@
 
 @media (max-width: $mobile-width) {
   .about-company__body {
-    padding: 57px 10px 66px 30px;
+    padding: 58px 5px 64px 27px;
     margin-left: 0;
   }
 
@@ -112,13 +117,17 @@
 
   .about-company__text h3 {
     @include font(28px, 39px, 400);
-    margin-bottom: 19px;
+    margin-bottom: 23px;
   }
   .about-company__text p {
-    margin-bottom: 43px;
+    margin-bottom: 40px;
   }
 
   .about-company__text p + p {
-    margin-bottom: 28px;
+    margin-bottom: 30px;
+  }
+
+  .about-company__text a {
+    padding: 13px 52px;
   }
 }
