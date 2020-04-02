@@ -64,17 +64,16 @@
   });
 
   // Перемещение
-  window.__forceSmoothScrollPolyfill__ = true;
 
   if (scrollForm) {
     scrollForm.addEventListener('click', function () {
-      window.scrollBy({top: (form.offsetTop - window.scrollY), behavior: 'smooth'});
+      window.scrollBy({top: (form.offsetTop - window.pageYOffset), left: 0, behavior: 'smooth'});
     });
   }
 
   if (scrollBenefits) {
     scrollBenefits.addEventListener('click', function () {
-      window.scrollBy({top: (benefits.offsetTop - window.scrollY), behavior: 'smooth'});
+      window.scrollBy({top: (benefits.offsetTop - window.pageYOffset), left: 0, behavior: 'smooth'});
     });
   }
 
