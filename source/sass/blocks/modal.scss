@@ -61,16 +61,13 @@
 }
 
 .modal__item,
-.modal__textarea  {
+.modal__textarea {
   @include reset-list();
 }
 
 .modal__item input {
   width: 100%;
   height: 51px;
-}
-
-.modal__item input {
   padding: 14px 24px;
   margin-bottom: 30px;
   border: 0;
@@ -91,6 +88,7 @@
 .modal__item input::placeholder,
 .modal__textarea textarea::placeholder {
   color: $main-color;
+  opacity: 1;
 }
 
 .modal input:focus,
@@ -134,6 +132,7 @@
 .modal__checkbox label {
   position: relative;
   display: inline-block;
+  vertical-align: baseline;
   max-width: 400px;
   padding-left: 50px;
   cursor: pointer;
@@ -163,7 +162,7 @@
   top: 0;
   left: 0;
 
-  background-image: url(../img/checkbox.svg);
+  background-image: url("../img/checkbox.svg");
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -172,4 +171,3 @@
   position: absolute;
   opacity: 0;
 }
-

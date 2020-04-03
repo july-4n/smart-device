@@ -6,8 +6,12 @@
 .social__list {
   @include reset-list();
   display: flex;
-  justify-content: space-between;
-  width: 112px;
+  flex-wrap: wrap;
+  min-width: 115px;
+}
+
+.social__list li:not(:last-child) {
+  margin-right: 17px;
 }
 
 .social__list a:hover {
@@ -16,7 +20,7 @@
 
 @media (max-width: $mobile-width) {
   .social__list {
-    width: 112px;
+    // width: 112px;
     margin: 30px auto 0;
   }
 }

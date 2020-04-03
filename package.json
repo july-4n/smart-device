@@ -53,6 +53,7 @@
   },
   "dependencies": {
     "del": "^4.1.1",
+    "editorconfig": "^0.15.3",
     "nodelist-foreach-polyfill": "^1.2.0",
     "picturefill": "^3.0.3",
     "smoothscroll-polyfill": "^0.4.4",

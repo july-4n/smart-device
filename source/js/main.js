@@ -12,7 +12,6 @@
   var scrollBenefits = document.querySelector('.first-screen__scroll');
   var benefits = document.querySelector('.benefits');
   var form = document.querySelector('.contacts-us');
-  var accButtons = document.querySelectorAll('.page-footer__acc-button');
   var contactsForm = document.querySelector('.contacts-us form');
   var nameFormInput = document.querySelector('#contacts-us-user-name');
   var phoneFormInput = document.querySelector('#contacts-us-phone');
@@ -79,29 +78,68 @@
 
   // Аккордеон
 
-  for (var i = 0; i < accButtons.length; i++) {
-    accButtons[i].addEventListener('click', function () {
-      if (!(this.classList.contains('active'))) {
-        for (var i = 0; i < accButtons.length; i++) {
-          accButtons[i].classList.remove('active');
-        }
-        this.classList.add('active');
-      }
-    });
+  var acc = document.querySelectorAll('.page-footer__acc');
+
+  for (var i = 0; i < acc.length; i++) {
+    acc[i].onclick = function () {
+      this.classList.toggle('active');
+
+      this.nextElementSibling.classList.toggle('show');
+    };
   }
 
   // Хранение данных в localStorage
 
-  contactsForm.addEventListener('submit', function () {
-    localStorage.setItem('name-field', nameFormInput.value);
-    localStorage.setItem('phone-field', phoneFormInput.value);
-    localStorage.setItem('message-field', messageFormInput.value);
-  });
+  var isStorageSupport = true;
+  try {
+    localStorage.getItem('nameModalInput');
+    localStorage.getItem('phoneModalInput');
+    localStorage.getItem('messageModalInput');
+    localStorage.getItem('nameFormInput');
+    localStorage.getItem('phoneFormInput');
+    localStorage.getItem('messageFormInput');
+  } catch (err) {
+    isStorageSupport = false;
+  }
 
   modalForm.addEventListener('submit', function () {
-    localStorage.setItem('name-modal', nameModalInput.value);
-    localStorage.setItem('phone-modal', phoneModalInput.value);
-    localStorage.setItem('message-modal', messageModalInput.value);
+    if (isStorageSupport) {
+      localStorage.setItem('name-modal', nameModalInput.value);
+      localStorage.setItem('phone-modal', phoneModalInput.value);
+      localStorage.setItem('message-modal', messageModalInput.value);
+    }
+  });
+
+  var getItemModal = function () {
+    if (isStorageSupport) {
+      nameModalInput.value = localStorage.getItem('name-modal');
+      phoneModalInput.value = localStorage.getItem('phone-modal');
+      messageModalInput.value = localStorage.getItem('message-modal');
+    }
+  };
+
+  modalOpenBtn.addEventListener('click', function () {
+    getItemModal();
+  });
+
+  contactsForm.addEventListener('submit', function () {
+    if (isStorageSupport) {
+      localStorage.setItem('name-field', nameFormInput.value);
+      localStorage.setItem('phone-field', phoneFormInput.value);
+      localStorage.setItem('message-field', messageFormInput.value);
+    }
+  });
+
+  var getItemForm = function () {
+    if (isStorageSupport) {
+      nameFormInput.value = localStorage.getItem('name-field');
+      phoneFormInput.value = localStorage.getItem('phone-field');
+      messageFormInput.value = localStorage.getItem('message-field');
+    }
+  };
+
+  nameFormInput.addEventListener('click', function () {
+    getItemForm();
   });
 
   //  Маска номера телефона
@@ -109,7 +147,7 @@
   var maskOptions = {
     mask: '+{7}(000)000-00-00'
   };
-  var mask = IMask(phoneModalInput, maskOptions);
-  var mask = IMask(phoneFormInput, maskOptions);
+  var maskModal = IMask(phoneModalInput, maskOptions);
+  var maskForm = IMask(phoneFormInput, maskOptions);
 
 })();

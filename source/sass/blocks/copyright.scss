@@ -1,7 +1,8 @@
 .copyright {
   position: static;
-  width: 100%;
   display: flex;
+  width: 100%;
+
   border-top: 1px solid $line;
 }
 
@@ -9,9 +10,9 @@
   @include reset-list();
   display: flex;
   max-width: 1440px;
+  width: 100%;
   padding: 15px 14px 14px;
   margin: 0 auto;
-  width: 100%;
 }
 
 .copyright__text--dev {
@@ -47,6 +48,7 @@
   .copyright__text--privacy {
     margin-left: 0;
   }
+
   .text--year {
     position: inherit;
     top: 0;
@@ -59,9 +61,6 @@
     align-items: center;
     padding: 26px 0 26px;
     margin: 0 auto;
-
-    position: relative;
-    height: 123px;
   }
 
   .copyright__text--privacy {

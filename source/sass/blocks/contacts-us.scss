@@ -61,8 +61,8 @@
 
 .contacts-us__info span {
   display: inline-block;
-  vertical-align: baseline;
   padding: 10px 0 49px;
+  vertical-align: baseline;
   color: $main-color;
 }
 
@@ -82,15 +82,16 @@
 .contacts-us__item input {
   width: 270px;
   height: 50px;
+  outline: none;
 }
 
 .contacts-us__item input,
 .contacts-us__textarea textarea {
   padding: 14px 16px;
   margin-bottom: 24px;
-  border: 0;
-  color: $main-color;
   background-color: rgba($main-color, 0.1);
+  color: $main-color;
+  border: 0;
 }
 
 .contacts-us__textarea {
@@ -100,21 +101,26 @@
 .contacts-us__item input::placeholder,
 .contacts-us__textarea textarea::placeholder {
   color: $main-color;
+  opacity: 1;
 }
 
 .contacts-us__textarea textarea {
   width: 570px;
   min-height: 154px;
-  resize: none;
   border: none;
+  resize: none;
+  outline: none;
 }
 
-.contacts-us input:focus,
 .contacts-us input:hover,
-.contacts-us textarea:focus,
 .contacts-us textarea:hover {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
   cursor: pointer;
+}
+
+.contacts-us input:focus,
+.contacts-us textarea:focus {
+  border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .contacts-us__submit {
@@ -123,7 +129,6 @@
   align-items: center;
   margin-bottom: 113px;
   z-index: 10;
-
 }
 
 .contacts-us__btn {
@@ -136,6 +141,10 @@
 
   &:hover {
     opacity: 0.7;
+  }
+
+  &:focus {
+    opacity: 0.4;
   }
 }
 
@@ -152,6 +161,7 @@
   opacity: 0.8;
 }
 
+
 .contacts-us__checkbox label {
   position: relative;
   display: block;
@@ -160,6 +170,10 @@
 
   &:hover {
     opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.4;
   }
 }
 
@@ -183,7 +197,7 @@
   top: 0;
   left: 38px;
 
-  background-image: url(../img/checkbox.svg);
+  background-image: url("../img/checkbox.svg");
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -219,12 +233,9 @@
   }
 
   .contacts-us__item input {
-    margin-bottom: 28px;
-  }
-
-  .contacts-us__item input {
     width: 279px;
     height: 50px;
+    margin-bottom: 28px;
   }
 
   .contacts-us__textarea textarea {
@@ -283,8 +294,8 @@
   .contacts-us__textarea textarea {
     width: 290px;
     min-height: 104px;
-    margin-bottom: 3px;
     padding-top: 15px;
+    margin-bottom: 3px;
   }
 
   .contacts-us__submit {

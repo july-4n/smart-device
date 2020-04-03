@@ -63,9 +63,9 @@
             <div class="first-screen__text">
               <h1>Печатные платы</h1>
               <p>Производство и монтаж, поставка комплектующих, блоков и модулей</p>
-              <a class="first-screen__btn first-screen__btn--desk btn">Получить бесплатную консультацию</a>
+              <a class="first-screen__btn first-screen__btn--desk btn" tabindex="0">Получить бесплатную консультацию</a>
               <a class="first-screen__btn first-screen__btn--mobile btn" href="#">Бесплатная консультация</a>
-              <a class="first-screen__scroll">Скролл вниз</a>
+              <a class="first-screen__scroll" tabindex="0">Скролл вниз</a>
             </div>
             <div class="first-screen__img">
               <picture>
@@ -169,7 +169,7 @@
                   <source type="image/webp" srcset="img/services/image-1-desktop@1x.webp 1x, img/services/image-1-desktop@2x.webp 2x">
                   <source media="(max-width: 767px)" srcset="img/services/image-1-mobile@1x.png 1x, img/services/image-1-mobile@2x.png 2x">
                   <source media="(max-width: 1023px)" srcset="img/services/image-1-tablet@1x.png 1x, img/services/image-1-tablet@2x.png 2x">
-                    <img src="img/services/image-1-desktop@1x.png" srcset="img/services/image-1-desktop@2x.png 2x" width="370" height="620" alt="Производство печатных плат">
+                  <img src="img/services/image-1-desktop@1x.png" srcset="img/services/image-1-desktop@2x.png 2x" width="370" height="620" alt="Производство печатных плат">
                 </picture>
               </a>
             </li>
@@ -288,10 +288,12 @@
           </div>
         </div>
         <div class="page-footer__second-section">
+          <div class="page-footer__acc">
             <h3>Разделы сайта</h3>
-            <button class="page-footer__acc-button" type="button">
+            <button type="button">
               <span class="visually-hidden">Открыть</span>
             </button>
+          </div>
           <ul class="page-footer__nav page-footer__acc-list">
             <li><a class="page-footer__nav-link" href="#">О компании</a></li>
             <li><a class="page-footer__nav-link" href="#">Продукты</a></li>
@@ -303,10 +305,12 @@
           </ul>
         </div>
         <div class="page-footer__third-section">
+          <div class="page-footer__acc">
             <h3>Наш офис</h3>
-            <button class="page-footer__acc-button" type="button">
+            <button type="button">
               <span class="visually-hidden">Открыть</span>
             </button>
+          </div>
           <ul class="page-footer__contacts page-footer__acc-list">
             <li class="page-footer__item">г. Мытищи, Олимпийский проспект, д.10</li>
             <li><a href="tel:+74955894050">+7 (495) 589-40-50</a></li>

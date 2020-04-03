@@ -1,6 +1,6 @@
 .inner-background {
   background-color: $background-top;
-  background-image: url("../img/first-screen/bg-desktop@1x.webp"),url("../img/first-screen/bg-desktop@1x.png");
+  background-image: url("../img/first-screen/bg-desktop@1x.webp"), url("../img/first-screen/bg-desktop@1x.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -10,7 +10,7 @@
   }
 }
 
-@media(max-width: $tablet-width) {
+@media (max-width: $tablet-width) {
   .inner-background {
     background-image: url("../img/first-screen/bg-tablet@1x.webp"), url("../img/first-screen/bg-tablet@1x.png");
 
@@ -20,7 +20,7 @@
   }
 }
 
-@media(max-width: $mobile-width) {
+@media (max-width: $mobile-width) {
   .inner-background {
     background-image: url("../img/first-screen/bg-mobile@1x.webp"), url("../img/first-screen/bg-mobile@1x.png");
 

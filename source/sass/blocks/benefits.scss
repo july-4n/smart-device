@@ -16,7 +16,7 @@
   min-height: 299px;
   padding: 38px 36px 49px 44px;
   margin-bottom: 30px;
-  background: #fff;
+  background: $main-color;
   border: 1px solid $border;
   border-left: 1px solid $decor-color;
   cursor: pointer;
@@ -46,10 +46,6 @@
 
 .benefits__item:hover h3 {
   color: $main-color;
-}
-
-.benefits__item p {
-  @include reset-list();
 }
 
 .benefits__item svg {
@@ -101,6 +97,7 @@
     width: 32.18px;
     height: 32.18px;
   }
+
   .benefits__item h3 {
     margin: 0 0 9px;
   }
@@ -148,7 +145,6 @@
 
   .benefits__item--hired {
     min-height: 310px;
-
   }
 
   .benefits__item--hired h3 {

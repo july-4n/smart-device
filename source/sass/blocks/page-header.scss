@@ -100,6 +100,7 @@
 
   .page-header__item--email {
     margin-top: -6px;
+    margin-right: 0;
   }
 
   .page-header__info {
@@ -108,10 +109,6 @@
 
   .page-header__info span {
     display: none;
-  }
-
-  .page-header__item--email {
-    margin-right: 0;
   }
 
   .page-header__item--email svg {

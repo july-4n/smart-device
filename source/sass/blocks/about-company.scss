@@ -40,10 +40,10 @@
 .about-company__text a {
   padding: 14px 50px;
   margin-left: -29px;
-  border-color: $decor-color;
+  letter-spacing: 0.05em;
   background-color: $main-color;
   color: $decor-color;
-  letter-spacing: 0.05em;
+  border-color: $decor-color;
 
   &:hover {
     background-color: $decor-color;
@@ -119,6 +119,7 @@
     @include font(28px, 39px, 400);
     margin-bottom: 23px;
   }
+
   .about-company__text p {
     margin-bottom: 40px;
   }
@@ -131,5 +132,3 @@
     padding: 13px 52px;
   }
 }
-
-
