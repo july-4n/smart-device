@@ -147,6 +147,9 @@
   var maskOptions = {
     mask: '+{7}(000)000-00-00'
   };
+
+  /* eslint-disable */
+
   var maskModal = IMask(phoneModalInput, maskOptions);
   var maskForm = IMask(phoneFormInput, maskOptions);
 
