@@ -83,10 +83,9 @@
   top: 436px;
   left: -35px;
   transform: rotate(-90deg);
+  color: $main-color;
   opacity: 0.5;
   cursor: pointer;
-
-  color: $main-color;
 
   &:hover {
     opacity: 1;

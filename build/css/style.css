@@ -959,9 +959,9 @@ body {
   left: -35px;
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
+  color: #ffffff;
   opacity: 0.5;
-  cursor: pointer;
-  color: #ffffff; }
+  cursor: pointer; }
   .first-screen__scroll:hover {
     opacity: 1; }
   .first-screen__scroll:active {
